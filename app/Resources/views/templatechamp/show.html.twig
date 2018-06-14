@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Templatechamp</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ templateChamp.id }}</td>
+            </tr>
+            <tr>
+                <th>Userid</th>
+                <td>{{ templateChamp.userId }}</td>
+            </tr>
+            <tr>
+                <th>Templateid</th>
+                <td>{{ templateChamp.templateId }}</td>
+            </tr>
+            <tr>
+                <th>Sectionid</th>
+                <td>{{ templateChamp.sectionId }}</td>
+            </tr>
+            <tr>
+                <th>Champid</th>
+                <td>{{ templateChamp.champId }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ templateChamp.contenu }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('templatechamp_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('templatechamp_edit', { 'id': templateChamp.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

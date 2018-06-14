@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Templatechamps list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Userid</th>
+                <th>Templateid</th>
+                <th>Sectionid</th>
+                <th>Champid</th>
+                <th>Contenu</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for templateChamp in templateChamps %}
+            <tr>
+                <td><a href="{{ path('templatechamp_show', { 'id': templateChamp.id }) }}">{{ templateChamp.id }}</a></td>
+                <td>{{ templateChamp.userId }}</td>
+                <td>{{ templateChamp.templateId }}</td>
+                <td>{{ templateChamp.sectionId }}</td>
+                <td>{{ templateChamp.champId }}</td>
+                <td>{{ templateChamp.contenu }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('templatechamp_show', { 'id': templateChamp.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('templatechamp_edit', { 'id': templateChamp.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('templatechamp_new') }}">Create a new templateChamp</a>
+        </li>
+    </ul>
+{% endblock %}

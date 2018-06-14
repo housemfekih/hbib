@@ -1,0 +1,76 @@
+
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+     
+       <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title float-left">Form Wizard</h4>
+
+                                    <ol class="breadcrumb float-right">
+                                       
+                                        <li class="breadcrumb-item"><a href="{{path ('section_index')}}">Liste Sections</a></li>
+                                        <li class="breadcrumb-item active">Nouvelle Section</li>
+                                    </ol>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+
+                        <!-- Basic Form Wizard -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card-box">
+                                    <h4 class="m-t-0 header-title"><b>Nouvelle section</b></h4>
+                                  
+
+
+{{ form_start(form, { 'attr': { 'class': 'form-group clearfix' , 'id': 'basic-form'} }) }}
+    {{ form_errors(form) }}
+    <div>
+  <h3>Nom de section</h3>
+     <section>
+
+    
+    </section>
+
+
+    
+{{ form_end(form) }}
+
+
+                                   
+                                   </div>
+								   </div>
+								   </div>
+								   </div>
+
+                        <!-- End row -->
+
+
+
+
+
+ <a href="{{ path('section_index') }}"class="btn btn-success btn-rounded waves-light waves-effect w-md">Retour a la liste</a>
+
+    
+
+ {% endblock %}
+{% block javascripts %}
+    <script>
+$(document).ready( function () {
+
+  $(".chosen-select").chosen({});
+});
+
+    </script>
+        {% endblock %}
+
+
+
+
+

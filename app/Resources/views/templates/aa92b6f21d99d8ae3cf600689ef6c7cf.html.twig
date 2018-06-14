@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>Responsive Resume/CV Template for Developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive HTML5 Resume/CV Template for Developers">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico">  
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="{{ asset ('assets/plugins/bootstrap/css/bootstrap.min.css')}}">   
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{{ asset ('assets/plugins/font-awesome/css/font-awesome.css')}}">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="{{ asset ('assets/css/styles-2.css')}}">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+ 
+</head> 
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar-wrapper">
+            <div class="profile-container">
+                <img class="profile" src="{{ asset ('assets/images/profile.png')}}" alt="" />
+                <h1 class="name">{{ s5['ch12'].content }}</h1>
+                <h3 class="tagline">{{ s5['ch13'].content }}</h3>
+            </div><!--//profile-container-->
+            
+            <div class="contact-container container-block">
+                <ul class="list-unstyled contact-list">
+                    <li class="email"><i class="fa fa-envelope"></i><a href="mailto: yourname@email.com">{{ s5['ch14'].content }}</a></li>
+                    <li class="phone"><i class="fa fa-phone"></i><a href="tel:0123 456 789">{{ s5['ch15'].content }}</a></li>
+                    <li class="website"><i class="fa fa-globe"></i><a href="http://themes.3rdwavemedia.com/website-templates/free-responsive-website-template-for-developers/" target="_blank">{{ s5['ch16'].content }}</a></li>
+                    <li class="linkedin"><i class="fa fa-linkedin"></i><a href="#" target="_blank">{{ s5['ch17'].content }}</a></li>
+                    <li class="github"><i class="fa fa-github"></i><a href="#" target="_blank">{{ s5['ch18'].content }}</a></li>
+                    <li class="twitter"><i class="fa fa-twitter"></i></li>
+                </ul>
+            </div><!--//contact-container-->
+            <div class="education-container container-block">
+                <h2 class="container-block-title">Education</h2>
+                <div class="item">
+                    <h4 class="degree">{{ s6['ch22'].content }}</h4>
+                    <h5 class="meta">{{ s6['ch23'].content }}</h5>
+                    <div class="time">{{ s6['ch24'].content }}</div>
+                </div><!--//item-->
+                <div class="item">
+                    <h4 class="degree">{{ s6['ch22'].content }}</h4>
+                    <h5 class="meta">{{ s6['ch23'].content }}</h5>
+                    <div class="time">{{ s6['ch24'].content }}</div>
+                </div><!--//item-->
+            </div><!--//education-container-->
+            
+            <div class="languages-container container-block">
+                <h2 class="container-block-title">Languages</h2>
+                <ul class="list-unstyled interests-list">
+                    <li>{{ s7['ch25'].content }} <span class="lang-desc">{{ s7['ch25'].content }}</span></li>
+                    <li>French <span class="lang-desc">(Professional)</span></li>
+                    <li>Spanish <span class="lang-desc">(Professional)</span></li>
+                </ul>
+            </div><!--//interests-->
+            
+            <div class="interests-container container-block">
+                <h2 class="container-block-title">Interests</h2>
+                <ul class="list-unstyled interests-list">
+                    <li>{{ s8['ch27'].content }}</li>
+                    <li>Snowboarding</li>
+                    <li>Cooking</li>
+                </ul>
+            </div><!--//interests-->
+            
+        </div><!--//sidebar-wrapper-->
+        
+        <div class="main-wrapper">
+            
+            <section class="section summary-section">
+                <h2 class="section-title"><i class="fa fa-user"></i>Career Profile</h2>
+                <div class="summary">
+				{{ s9['ch28'].content }}
+			
+                </div><!--//summary-->
+            </section><!--//section-->
+            
+            <section class="section experiences-section">
+                <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
+                
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">{{ s10['ch29'].content }}</h3>
+                            <div class="time">{{ s10['ch30'].content }}{{ s10['ch31'].content }}</div>
+                        </div><!--//upper-row-->
+                        <div class="company">{{ s10['ch32'].content }} {{ s10['ch33'].content }}</div>
+                    </div><!--//meta-->
+                    <div class="details">
+                        <p>{{ s10['ch34'].content }} </p>
+                    </div><!--//details-->
+                </div><!--//item-->
+                
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">Senior Software Engineer</h3>
+                            <div class="time">2014 - 2015</div>
+                        </div><!--//upper-row-->
+                        <div class="company">Google, London</div>
+                    </div><!--//meta-->
+                    <div class="details">
+                        <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>  
+                        
+                    </div><!--//details-->
+                </div><!--//item-->
+                
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">UI Developer</h3>
+                            <div class="time">2012 - 2014</div>
+                        </div><!--//upper-row-->
+                        <div class="company">Amazon, London</div>
+                    </div><!--//meta-->
+                    <div class="details">
+                        <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>  
+                    </div><!--//details-->
+                </div><!--//item-->
+                
+            </section><!--//section-->
+            
+            <section class="section projects-section">
+                <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
+                <div class="intro">
+                    <p>{{ s11['ch35'].content }}</p>
+                </div><!--//intro-->
+                <div class="item">
+                    <span class="project-title"><a href="#hook">Velocity</a></span> - <span class="project-tagline">{{ s11['ch36'].content }}</span>
+                    
+                </div><!--//item-->
+                <div class="item">
+                    <span class="project-title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-web-development-agencies-devstudio/" target="_blank">DevStudio</a></span> - 
+                    <span class="project-tagline">A responsive website template designed to help web developers/designers market their services. </span>
+                </div><!--//item-->
+                <div class="item">
+                    <span class="project-title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-startups-tempo/" target="_blank">Tempo</a></span> - <span class="project-tagline">A responsive website template designed to help startups promote their products or services and to attract users &amp; investors</span>
+                </div><!--//item-->
+                <div class="item">
+                    <span class="project-title"><a href="hhttp://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-mobile-apps-atom/" target="_blank">Atom</a></span> - <span class="project-tagline">A comprehensive website template solution for startups/developers to market their mobile apps. </span>
+                </div><!--//item-->
+                <div class="item">
+                    <span class="project-title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-mobile-apps-delta/" target="_blank">Delta</a></span> - <span class="project-tagline">A responsive Bootstrap one page theme designed to help app developers promote their mobile apps</span>
+                </div><!--//item-->
+            </section><!--//section-->
+            
+            <section class="skills-section section">
+                <h2 class="section-title"><i class="fa fa-rocket"></i>Skills &amp; Proficiency</h2>
+                <div class="skillset">        
+                    <div class="item">
+                        <h3 class="level-title">{{ s12['ch37'].content }}</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="{{ s12['ch38'].content }}%">
+                            </div>                                      
+                        </div><!--//level-bar-->                                 
+                    </div><!--//item-->
+                    
+                    <div class="item">
+                        <h3 class="level-title">Javascript &amp; jQuery</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="98%">
+                            </div>                                      
+                        </div><!--//level-bar-->                                 
+                    </div><!--//item-->
+                    
+                    <div class="item">
+                        <h3 class="level-title">Angular</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="98%">
+                            </div>                                      
+                        </div><!--//level-bar-->                                 
+                    </div><!--//item-->
+                    
+                    <div class="item">
+                        <h3 class="level-title">HTML5 &amp; CSS</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="95%">
+                            </div>                                      
+                        </div><!--//level-bar-->                                 
+                    </div><!--//item-->
+                    
+                    <div class="item">
+                        <h3 class="level-title">Ruby on Rails</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="85%">
+                            </div>                                      
+                        </div><!--//level-bar-->                                 
+                    </div><!--//item-->
+                    
+                    <div class="item">
+                        <h3 class="level-title">Sketch &amp; Photoshop</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="60%">
+                            </div>                                      
+                        </div><!--//level-bar-->                                 
+                    </div><!--//item-->
+                    
+                </div>  
+            </section><!--//skills-section-->
+            
+        </div><!--//main-body-->
+    </div>
+ 
+    <footer class="footer">
+        <div class="text-center">
+                <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+                <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+ 
+    <!-- Javascript -->          
+    <script type="text/javascript" src="{{ asset ('assets/plugins/jquery-1.11.3.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset ('assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>    
+    <!-- custom js -->
+    <script type="text/javascript" src="{{ asset ('assets/js/main.js')}}"></script>            
+</body>
+</html> 
+

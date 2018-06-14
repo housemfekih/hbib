@@ -1,0 +1,119 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <h1>Cv creation</h1>
+
+    <!-- Basic Form Wizard -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card-box">
+                                    <h4 class="m-t-0 header-title"><b>Nouveau CV</b></h4>
+                                  
+
+
+{{ form_start(form, { 'attr': { 'class': 'form-group clearfix' , 'id': 'basic-form' , novalidate: 'novalidate'} }) }}
+ <div class="col-sm-12">
+ <h3>Créer votre CV </h3>
+ <section>
+ <div>
+        {{ form_row(form.templateID) }}
+		{{ form_row(form.nomCv) }}
+		{{ form_row(form.fichierCv) }}
+		{{ form_row(form.contenuCv) }}
+</div>
+</section>
+{% for section in templates.sections %}
+	<h3 >{{ section.name }}</h3>
+ <section>
+ <div>
+ <h4 class="sec" id="{{ section.id }}" style="">{{ section.name }}</h4>
+ {% for champ in section.champs %}
+	{% if champ[1] != 'textarea' %}
+		{{ champ[0] }} : <input type="{{ champ[1] }}" name="{{ champ[0] }}" id="{{champ[3]}}" data="{{ section.id }}" class="cls form-control" />
+		{% if  champ[4]  %}
+		<button type="button" class="add" data='{{ champ[0] }} : <input type="{{ champ[1] }}" name="{{ champ[0] }}" id="{{champ[3]}}" data="{{ section.id }}" class="cls form-control" />' id="{{champ[3]}}">
+			Add</button><br>
+		<span class="a{{champ[3]}}"></span><br>
+		{% endif %}
+	{% else %}
+		{{ champ[0] }} : <textarea  name="{{ champ[0] }}" id="{{champ[3]}}" data="{{ section.id }}" class="cls" ></textarea><br>
+	{% endif %}
+ {% endfor %}
+ </div>
+ </section>
+{% endfor %}
+ <h3>Valider et terminer </h3>
+ <section>
+ <div>
+ <button  type="button" onclick="location.href = {{ path('templatechamp_new_tmp') }};" class="btn btn-success btn-rounded waves-light waves-effect w-md"  id="visualiser">visualiser</button>
+		
+		</div>
+</section>
+		</div>
+    {{ form_end(form) }}
+
+	
+    
+	</div>
+	</div>
+	</div>
+
+    <ul>
+        <li>
+            <a href="{{ path('cv_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+$(document).ready( function () {
+
+	
+	$(".tmpl").val({{ id }});
+	$('#visualiser').on('click',function(event){
+			var array = ""
+			$('#basic-form input, #basic-form textarea').each(
+				function(index){  
+					
+					var input = $(this);
+					if (input.hasClass('cls')) {
+						array +=  input.attr('id') + "|" +  input.attr('data') + "|" +  input.val() + ";";
+					}
+				}
+			);
+			alert(array)
+			  $.ajax({
+		   url: "{{ path('templatechamp_new_tmp') }}",
+		   data: {
+			  array: array,
+			  tmpl : $(".tmpl").val(),
+			  userId : {{ app.user.id }}
+		   },
+		   error: function() {
+			  $('#info').html('<p>An error has occurred</p>');
+		   },
+		   dataType: 'json',
+		   success: function(data) {
+		   
+		   $(".dichCv").val(data["dichCv"]);
+		   $(".contCv").val(data["contCv"]);
+		   
+			
+			  
+		   },
+		   type: 'POST'
+		});
+
+		});
+		
+		$('.add').on('click',function(event){
+		
+			
+			
+			$(".a" + $(this).attr('id')).append($(this).attr('data'));
+		
+		});
+	});
+    </script>
+        {% endblock %}

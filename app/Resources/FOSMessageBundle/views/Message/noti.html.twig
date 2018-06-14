@@ -1,0 +1,41 @@
+{% extends 'admin.html.twig' %}
+
+{% block msl %}
+
+     {% if threads %}
+        {% for thread in threads %}
+            <div>
+                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon"><img src="{{asset ('template/assets/images/users/avatar-2.jpg')}}" class="img-fluid rounded-circle" alt="" /> </div>
+                                        
+                    <a href="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}">
+                     
+                        <p class="notify-details">{{ thread.createdBy }}</p>
+ </a>
+                     <p class="text-muted font-13 mb-0 user-msg">{{thread.subject}}</p>   
+                 </div>    
+                             
+            
+        {% endfor %}
+    {% else %}
+        <tr>
+            <td colspan="6">
+                {% trans from 'FOSMessageBundle' %}no_thread{% endtrans %}.
+            </td>
+        </tr>
+    {% endif %}
+</a>
+
+                             
+
+                                
+                                   
+
+                                <!-- All-->
+                                <a href="{{path ('fos_message_inbox')}}" class="dropdown-item text-center text-primary notify-item notify-all">
+                                    View all <i class="fi-arrow-right"></i>
+                                </a>
+
+                            </div>
+                        </li>
+{% endblock %}

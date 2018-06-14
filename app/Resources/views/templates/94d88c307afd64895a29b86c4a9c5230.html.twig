@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>Responsive Resume/CV Template for Developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive HTML5 Resume/CV Template for Developers">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico">  
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="{{ asset ('assets/plugins/bootstrap/css/bootstrap.min.css')}}">   
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{{ asset ('assets/plugins/font-awesome/css/font-awesome.css')}}">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="{{ asset ('assets/css/styles.css')}}">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+ 
+</head> 
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar-wrapper">
+            <div class="profile-container">
+                <img class="profile" src="{{ asset ('assets/images/profile.png')}}" alt="" />
+               {% for s5ch12 in s5['ch12']  %}
+				<h1 class="name"> {{ s5ch12.content }}</h1>
+				{% endfor %}
+				{% for s5ch13 in s5['ch13']  %}
+                <h3 class="tagline">{{ s5ch13.content }}</h3>
+				{% endfor %}
+            </div><!--//profile-container-->
+            
+            <div class="contact-container container-block">
+                <ul class="list-unstyled contact-list">
+			
+			{% for s5ch14 in s5['ch14']  %}
+			  <li class="email"><i class="fa fa-envelope"></i><a href="mailto: yourname@email.com">{{ s5ch14.content }}</a></li>
+			  {% endfor %}
+					{% for s5ch15 in s5['ch15']  %}
+                    <li class="phone"><i class="fa fa-phone"></i><a href="tel:0123 456 789">{{ s5ch15.content }}</a></li>
+                    {% endfor %}
+					
+					{% for s5ch16 in s5['ch16']  %}
+					<li class="website"><i class="fa fa-globe"></i><a href="http://themes.3rdwavemedia.com/website-templates/free-responsive-website-template-for-developers/" target="_blank">{{ s5ch16.content }}</a></li>
+					{% endfor %}
+					{% for s5ch17 in s5['ch17']  %}
+                    <li class="linkedin"><i class="fa fa-linkedin"></i><a href="#" target="_blank">{{ s5ch17.content }}</a></li>
+					{% endfor %}
+					{% for s5ch18 in s5['ch18']  %}
+                    <li class="github"><i class="fa fa-github"></i><a href="#" target="_blank">{{ s5ch18.content }}</a></li>
+					{% endfor %}
+					
+					{% for s5ch19 in s5['ch19']  %}
+					   <li class="twitter"><i class="fa fa-twitter"></i><a href="https://twitter.com/3rdwave_themes" target="_blank">{{ s5ch19.content }}</a></li>
+					{% endfor %}
+                </ul>
+            </div><!--//contact-container-->
+            <div class="education-container container-block">
+                <h2 class="container-block-title">Education</h2>
+                <div class="item">
+				{% for s6ch22 in s6['ch22']  %}
+				{% for s6ch23 in s6['ch23']  %}
+				{% for s6ch24 in s6['ch24']  %}
+                    <h4 class="degree">{{ s6ch22.content }}</h4>
+                    <h5 class="meta">{{ s6ch23.content }}</h5>
+                    <div class="time">{{ s6ch24.content }}</div>
+					
+					{% endfor %}
+					{% endfor %}
+					{% endfor %}
+                </div><!--//item-->
+                
+            </div><!--//education-container-->
+            
+            <div class="languages-container container-block">
+                <h2 class="container-block-title">Languages</h2>
+                <ul class="list-unstyled interests-list">
+				
+				
+                    <li>{% for s7ch25 in s7['ch25']  %} {{ s7ch25.content }} {% endfor %} <span class="lang-desc">
+					
+					{% for s7ch26 in s7['ch26']  %}
+					{{ s7ch26.content }}
+					{% endfor %}
+					</span></li>
+                    
+					
+                </ul>
+            </div><!--//interests-->
+            
+            <div class="interests-container container-block">
+                <h2 class="container-block-title">Interests</h2>
+                <ul class="list-unstyled interests-list">
+				
+                    <li>{% for s8ch27 in s8['ch27']  %} {{ s8ch27.content }}  {% endfor %}</li>
+               
+                </ul>
+            </div><!--//interests-->
+            
+        </div><!--//sidebar-wrapper-->
+        
+        <div class="main-wrapper">
+            
+            <section class="section summary-section">
+                <h2 class="section-title"><i class="fa fa-user"></i>Career Profile</h2>
+                <div class="summary">
+				
+				{% for s9ch28 in s9['ch28']  %}
+				{{ s9ch28.content }}
+				{% endfor %}
+                </div><!--//summary-->
+            </section><!--//section-->
+            
+            <section class="section experiences-section">
+                <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
+                
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+						{% for s10ch29 in s10['ch29']  %}
+						{% for s10ch30 in s10['ch30']  %}
+						{% for s10ch31 in s10['ch31']  %}
+						{% for s10ch32 in s10['ch32']  %}
+						{% for s10ch33 in s10['ch33']  %}
+						{% for s10ch34 in s10['ch34']  %}
+                            <h3 class="job-title">{{ s10ch29.content }}</h3>
+                            <div class="time">{{ s10ch30.content }}-{{ s10ch31.content }}</div>
+                        </div><!--//upper-row-->
+                        <div class="company">{{ s10ch32.content }} - {{ s10ch33.content }}</div>
+                    </div><!--//meta-->
+                    <div class="details">
+                        <p>{{ s10ch34.content }} </p>
+                    </div><!--//details-->
+                </div><!--//item-->
+                {% endfor %}
+				{% endfor %}
+				{% endfor %}
+				{% endfor %}
+				{% endfor %}
+				{% endfor %}
+              
+                
+               
+                
+            </section><!--//section-->
+            
+            <section class="section projects-section">
+                <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
+             
+                <div class="item">
+					{% for s11ch35 in s11['ch35']  %}	
+                    {% for s11ch36 in s11['ch36']  %}
+                    <span class="project-title"><a href="#hook">{{ s11ch35.content }}</a></span> - <span class="project-tagline">{{ s11ch36.content }}</span>
+                    {% endfor %}
+					{% endfor %}
+                </div><!--//item-->
+				
+              
+            </section><!--//section-->
+            
+            <section class="skills-section section">
+                <h2 class="section-title"><i class="fa fa-rocket"></i>Skills &amp; Proficiency</h2>
+                <div class="skillset">        
+                    <div class="item">
+					 {% for s12ch37 in s12['ch37']  %}
+					 {% for s12ch38 in s12['ch38']  %}
+                        <h3 class="level-title">{{ s12ch37.content }}</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="{{ s12ch38.content }}%">
+                            </div>                                      
+                        </div><!--//level-bar-->                                 
+                    </div><!--//item-->
+                    {% endfor %}
+					{% endfor %}
+                   
+                    
+                </div>  
+            </section><!--//skills-section-->
+            
+        </div><!--//main-body-->
+    </div>
+ 
+    <footer class="footer">
+        <div class="text-center">
+                <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+                <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+ 
+ 
+    <!-- Javascript -->          
+    <script type="text/javascript" src="{{ asset ('assets/plugins/jquery-1.11.3.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset ('assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>    
+    <!-- custom js -->
+    <script type="text/javascript" src="{{ asset ('assets/js/main.js')}}"></script>            
+</body>
+</html> 
+

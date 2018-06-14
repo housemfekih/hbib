@@ -1,0 +1,67 @@
+
+
+
+        {% block stylesheets %}
+
+   <!-- App favicon -->
+        <link rel="shortcut icon" href="{{ asset ('template/assets/images/favicon.ico')}}">
+        <link rel="stylesheet" href="{{ asset ('template/plugins/sweet-alert/sweetalert2.min.css')}}">
+        <!-- App css -->
+        <link rel="stylesheet" href="{{ asset ('template/assets/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{ asset ('template/assets/css/icons.css')}}">
+        <link rel="stylesheet" href="{{ asset ('template/assets/css/metismenu.min.css')}}">
+        <link rel="stylesheet" href="{{ asset ('template/assets/css/style.css')}}">
+         <link rel="stylesheet" href="{{ asset ('template/plugins/jquery-toastr/jquery.toast.min.css')}}">
+
+  <link rel="stylesheet" href="{{ asset ('homepage/css/font-awesome.min.css')}}">
+  <link rel="stylesheet" href="{{ asset ('homepage/css/animate.css')}}">
+  <link rel="stylesheet" href="{{ asset ('homepage/css/prettyPhoto.css')}}">
+  <link rel="stylesheet" href="{{ asset ('homepage/css/style.css')}}">
+
+        <script src="{{ asset ('template/assets/js/modernizr.min.js')}}"></script>
+                {% endblock %}
+
+                  {% block body %}
+
+      
+        <div>
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
+                 {% endblock %}
+
+                {% block javascripts %}
+
+   <!-- jQuery  -->
+        <script type="text/javascript" src="{{ asset ('homepage/js/jquery-2.1.1.min.js')}}"></script>
+          <script type="text/javascript" src="{{ asset ('homepage/js/jquery.prettyPhoto.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('homepage/js/jquery.isotope.min.js')}}"></script>
+  <script type="text/javascript" src="{{ asset ('homepage/js/wow.min.js')}}"></script>
+  <script type="text/javascript" src="{{ asset ('homepage/js/functions.js')}}"></script>
+
+        <script type="text/javascript" src="{{ asset ('template/assets/js/jquery.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/assets/js/popper.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/assets/js/bootstrap.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/assets/js/metisMenu.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/assets/js/waves.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/assets/js/jquery.slimscroll.js')}}"></script>
+        
+
+
+        <!-- Sweet Alert Js  -->
+        <script type="text/javascript"  src="{{ asset ('template/plugins/sweet-alert/sweetalert2.min.js')}}"></script>
+        <script type="text/javascript"  src="{{ asset ('template/assets/pages/jquery.sweet-alert.init.js')}}"></script>
+
+        <!-- App js -->
+
+     <!-- Toastr js -->
+      <script type="text/javascript" src="{{ asset ('template/plugins/jquery-toastr/jquery.toast.min.js')}}"></script>
+      <script type="text/javascript" src="{{ asset ('template/assets/pages/jquery.toastr.js')}}"></script>
+
+
+        <script type="text/javascript" src="{{ asset ('js/sideclick-bootstrap-modal.js') }}"></script>
+        <script type="text/javascript" src="{{ asset ('template/assets/js/jquery.core.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/assets/js/jquery.app.js')}}"></script>
+                  {% endblock %}
+ 
+

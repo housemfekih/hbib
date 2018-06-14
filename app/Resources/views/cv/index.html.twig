@@ -1,0 +1,64 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <h1>Liste des Cvs</h1>
+
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomcv</th>
+                <th>Templateid</th>
+                <th>Fichiercv</th>
+                <th>Userid</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for cv in cvs %}
+            <tr>
+                <td><a href="{{ path('cv_show', { 'id': cv.id }) }}">{{ cv.id }}</a></td>
+                <td>{{ cv.nomCv }}</td>
+                <td>{{ cv.templateId.nomTemplate }}</td>
+                <td>{{ cv.fichierCv }}</td>
+                <td>{{ cv.userId }}</td>
+
+                <td>
+                    
+                        
+                            <a href="{{ path('cv_show', { 'id': cv.id }) }}">
+                            <i class="fi-eye"></i> Afficher</a>
+                        
+                         <a href="{{ path('cv_edit', { 'id': cv.id }) }}">
+                            <i class=" dripicons-pencil"></i>Modifier</a>
+                        
+                    
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+  <a href="{{ path('cv_before_new') }}"class="btn btn-success btn-rounded waves-light waves-effect w-md">Creer nouveau CV</a>
+    </ul>
+{% endblock %}
+
+{% block javascripts %}
+  <script type="text/javascript">
+            $(document).ready(function() {
+                $('#datatable').DataTable();
+
+                //Buttons examples
+                var table = $('#datatable-buttons').DataTable({
+                    lengthChange: false,
+                    buttons: ['copy', 'excel', 'pdf']
+                });
+
+                table.buttons().container()
+                        .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
+            } );
+
+        </script>
+{% endblock %}

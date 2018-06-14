@@ -1,0 +1,84 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+{{ error.messageKey|trans(error.messageData, 'security') }}       
+                             </div>
+{% endif %}
+<form action="{{ path("fos_user_security_check") }}" method="post">
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+
+    
+
+
+                    <span class="login100-form-title">
+                       Connecter Vous
+                
+                    </span>
+
+                   
+
+    <div class="wrap-input100" >
+                       <input class="input100" type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+   
+
+<div class="wrap-input100 validate-input" data-validate = "Password is required">
+                        <input class="input100" type="password" id="password" name="_password" required="required" autocomplete="current-password" />
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+   
+
+
+<div class="text-center p-t-12">
+
+ <input  type="checkbox" id="remember_me" name="_remember_me" value="on" />
+  <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+</div>
+
+<div class="container-login100-form-btn">
+                        
+                            <input class="login100-form-btn" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+
+                    </div>
+
+                    <div class="text-center p-t-16">
+                      
+                        <a class="txt2" href="{{ path('fos_user_resetting_request') }}" >
+                          <h3>  Mot de passe oubliée ?</h3>
+                        </a>
+
+                    
+                    </div>
+                    <div class="container-login100-form-btn">
+                        
+                            <div class="btn btn-default">
+                            <h5>  <a class="txt2" href="{{ path('fos_user_registration_register') }}">
+                            
+                            Create your Account
+                            
+                        </a></h5>
+
+                    </div>
+       
+                 
+
+
+   
+ 
+
+    
+</form>

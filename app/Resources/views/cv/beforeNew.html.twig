@@ -1,0 +1,86 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <h1>Cv creation</h1>
+
+    <!-- Basic Form Wizard -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card-box">
+                                    <h4 class="m-t-0 header-title"><b>Nouveau CV</b></h4>
+                                  
+
+
+ <div class="col-sm-12">
+
+		{% for template in templates %}
+			
+			<!-- <iframe class="browser1" src="{{ url ~ template.fichierTemplate}}"> </iframe> -->
+			<div style="width:30%;float:left;">
+			<div class="col-sm-12 img-{{ template.id }} msg">
+			<img class="photo" src="{{ asset (url ~ template.content)}}" style="width:100%" data-id={{template.id}} data-toggle="modal" data-target="#myModal{{ template.id }}"></img>
+			</div>
+			<h3 class="col-sm-12">{{ template.nomTemplate }}</h3>
+			<div id="myModal{{ template.id }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    <h5 class="modal-title" id="myModalLabel">{{ template.nomTemplate }}</h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                   <img class="photo" src="{{ asset (url ~ template.content)}}" style="width:100%" data-id={{template.id}} data-toggle="modal" data-target="#myModal"></img>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                                                  
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+
+			</div>
+		{% endfor %}
+		</div>
+		<div style="clear: both;"></div>
+		 <div class="col-sm-12">
+		<button  class="btn btn-success btn-rounded waves-light waves-effect w-md"  id="create">Creer un nouveau CV</button>
+		</div>
+		<span id="templateId"></span>
+	
+    
+	</div>
+	</div>
+	</div>
+
+    <ul>
+        <li>
+            <a href="{{ path('cv_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+$(document).ready( function () {
+    $('.photo').on('click',function(event){
+
+        ch=$(this).data('id');
+        $('#templateId').html(ch);
+		unhilight_css = {"border-bottom-color":"red", 
+               "background-color":"#fff"};
+		$(".msg").css(unhilight_css);
+        hilight_css = {"border-bottom-color":"red", 
+               "background-color":"#000"};
+		$(".img-" + ch).css(hilight_css);
+    });
+	
+	 $('#create').on('click',function(event){
+	 var url = "{{ path('cv_new', {'id': 'template_id'}) }}"; 
+    url = url.replace("template_id", $('#templateId').text());
+	$(location).attr('href', url );
+	
+		});
+		});
+    </script>
+        {% endblock %}

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Company-HTML Bootstrap theme</title>
+
+
+       
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{{ asset ('homepage/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{ asset ('homepage/css/font-awesome.min.css')}}">
+  <link rel="stylesheet" href="{{ asset ('homepage/css/animate.css')}}">
+  <link rel="stylesheet" href="{{ asset ('homepage/css/prettyPhoto.css')}}">
+  <link rel="stylesheet" href="{{ asset ('homepage/css/style.css')}}">
+  <!-- =======================================================
+    Theme Name: Company
+    Theme URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+  
+  <section id="main-slider" class="no-margin">
+    <div class="carousel slide">
+      <div class="carousel-inner">
+<div class="item active" style="background-image: url('{{ asset('homepage/images/slider/bg1.jpg') }}')">  
+
+          <div class="container">
+            <div class="row slide-margin">
+              <div class="col-sm-6">
+                <div class="carousel-content">
+                  <h2 class="animation animated-item-1">Welcome <span>CV BUILDER</span></h2>
+                  <p class="animation animated-item-2">Créer un CV remarquable en quelques minutes
+Réinventez votre CV en moins de 10 minutes, pour se faire embaucher plus rapidement.</p>
+                </div>
+
+              </div>
+
+              <div class="col-sm-6 hidden-xs animation animated-item-4">
+                <div class="slider-img">
+                 
+{% block fos_user_content %}
+    <p>{{ 'registration.check_email'|trans({'%email%': user.email}) }}</p>
+{% endblock fos_user_content %}
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!--/.item-->
+      </div>
+      <!--/.carousel-inner-->
+    </div>
+    <!--/.carousel-->
+  </section>
+  <!--/#main-slider-->
+
+  
+
+  
+
+
+
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script type="text/javascript" src="{{ asset ('homepage/js/jquery-2.1.1.min.js')}}"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script type="text/javascript" src="{{ asset ('homepage/js/bootstrap.min.js')}}"></script>
+  <script type="text/javascript" src="{{ asset ('homepage/js/jquery.prettyPhoto.js')}}"></script>
+  <script type="text/javascript" src="{{ asset ('homepage/js/jquery.isotope.min.js')}}"></script>
+  <script type="text/javascript" src="{{ asset ('homepage/js/wow.min.js')}}"></script>
+  <script type="text/javascript" src="{{ asset ('homepage/js/functions.js')}}"></script>
+
+
+              <!-- jQuery  -->
+        <script type="text/javascript" src="{{ asset ('template/assets/js/jquery.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/assets/js/popper.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/assets/js/metisMenu.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/assets/js/waves.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/assets/js/jquery.slimscroll.js')}}"></script>
+   <!-- App js -->
+        <script type="text/javascript" src="{{ asset ('template/assets/js/jquery.core.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/assets/js/jquery.app.js')}}"></script>
+
+
+</body>
+
+</html>
